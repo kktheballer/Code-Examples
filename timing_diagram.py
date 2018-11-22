@@ -3,20 +3,20 @@ import sys
 import string
 
 _cur_dir = os.path.dirname(__file__)
-TARANA_ROOT_PARENT = os.path.join(_cur_dir, "../../../../../..")
-sys.path.append(TARANA_ROOT_PARENT)
-sys.path.append(os.path.join(TARANA_ROOT_PARENT, "tarana/tools/ctl/src/python/ctl"))
-sys.path.append(os.path.join(TARANA_ROOT_PARENT, "tarana/tools/lib/python"))
-sys.path.append(os.path.join(TARANA_ROOT_PARENT, "tarana/tools/utils/testing"))
-from tarana.tools.utils.testing import stub_component
+CONFIDENTIAL_ROOT_PARENT = os.path.join(_cur_dir, "../../../../../..")
+sys.path.append(CONFIDENTIAL_ROOT_PARENT)
+sys.path.append(os.path.join(CONFIDENTIAL_ROOT_PARENT, "tools/ctl/src/python/ctl"))
+sys.path.append(os.path.join(CONFIDENTIAL_ROOT_PARENT, "tools/lib/python"))
+sys.path.append(os.path.join(CONFIDENTIAL_ROOT_PARENT, "tools/utils/testing"))
+from tools.utils.testing import stub_component
 
 stub_component("syc", "0.660.000.01", "E1.xxx.xxx")
 stub_component("fsp", "0.660.000.04", "E1.xxx.xxx")
 stub_component("frf", "0.660.001.00", "E1.xxx.xxx")
 
 import ctl.frame_config as frame_config
-from tarana.tools.twshell.subcmds.en import config
-from tarana.tools.twshell.settings import TARANA_ROOT
+from tools.twshell.subcmds.en import config
+from tools.twshell.settings import CONFIDENTIAL_ROOT
 
 class TimingDiagram(object):
   """Class that contains all required functions to plot a timing diagram.
